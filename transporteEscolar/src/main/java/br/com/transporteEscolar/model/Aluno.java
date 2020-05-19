@@ -5,24 +5,26 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 public class Aluno implements Serializable {
-
-    public Aluno() {
-    }
 
     @Id // define ID autoIncremto
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
     private String nome;
+
     private String cpf;
+
     private String telefone;
+
     private String endereco;
+
     private LocalDate dataNascimento;
 
+    public Aluno() {
+    }
 
 // Definição específico no BANCO para atributo E-mail como :
     @NotNull // campo não pode ser nulo

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-
+/* classe criada para desenvolver join/sql específicos para aluno*/
 public interface AlunoRepositoryJPA extends JpaRepository<Onibus, Long> {
 
     @Query(value = "select t.id, t.nome, from onibus o " +

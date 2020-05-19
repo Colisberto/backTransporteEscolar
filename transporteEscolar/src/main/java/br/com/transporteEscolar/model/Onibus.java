@@ -4,13 +4,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 public class Onibus implements Serializable { // Metodo da classe como Serializable,
                                             // transforma em cadeia de caractere e gravar no banco !!
-
 
     @Id // define ID autoIncremto
     @GeneratedValue(strategy= GenerationType.AUTO)
