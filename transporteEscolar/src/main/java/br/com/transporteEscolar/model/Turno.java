@@ -44,7 +44,7 @@ public class Turno implements Serializable {
         return horarioEmbarque;
     }
 
-    public void setHorarioEmbarque(String horarioDesembarque) {
+    public void setHorarioEmbarque(String horarioEmbarque) {
         this.horarioEmbarque= horarioEmbarque;
     }
 
@@ -61,8 +61,8 @@ public class Turno implements Serializable {
         return dtInicTurno;
     }
 
-    public void setDtInicTurno(LocalDate dtFinalTurno) {
-        this.dtFinalTurno = dtFinalTurno;
+    public void setDtInicTurno(LocalDate dtInicTurno) {
+        this.dtInicTurno = dtInicTurno;
     }
 
     public LocalDate getDtFinalTurno() {
