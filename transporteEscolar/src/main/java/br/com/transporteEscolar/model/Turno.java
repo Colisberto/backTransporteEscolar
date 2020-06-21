@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Turno implements Serializable {
@@ -16,13 +17,47 @@ public class Turno implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
+   // @NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
+    @Column(unique = true) // não pode se repetir
     private String turno;
+
+   // @NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
+    //@Column(unique = true) // não pode se repetir
     private String horarioEmbarque;
+
+    //@NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
+    //@Column(unique = true) // não pode se repetir
     private String horarioDesembarque;
+
+    //@NotNull // campo não pode ser nulo
+   // @NotBlank // campo não pode ser branco
+    //@Column(unique = true) // não pode se repetir
     private LocalDate dtInicTurno;
+
+    //@NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
+    //@Column(unique = true) // não pode se repetir
     private LocalDate dtFinalTurno;
 
+    @ManyToMany// Anotação para fazer relacionamento de Muitos para Muitos entre Onibus e aluno
+    private List<Aluno> alunos;
 
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
+    }
 
     public long getId() {
         return id;

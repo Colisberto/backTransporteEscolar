@@ -13,14 +13,26 @@ public class Aluno implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
+    //@NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
     private String nome;
 
+   // @NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
+    @Column(unique = true) // não pode se repetir
     private String cpf;
 
+   // @NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
+    //@Column(unique = true) // não pode se repetir
     private String telefone;
 
+   // @NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
     private String endereco;
 
+    //@NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
     private LocalDate dataNascimento;
 
     public Aluno() {

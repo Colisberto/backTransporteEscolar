@@ -53,17 +53,22 @@ public class AlunoController {
         return alunoRepository.findAll();
     }
 
-//    @GetMapping(path="/idAll", produces= MediaType.APPLICATION_JSON_VALUE)
-//    public @ResponseBody Iterable<Turma> getTurmasByIdAluno(@RequestParam("id") long id) {
-//        // This returns a JSON or XML with the users
-//        return alunoRepositoryJPA.listaTurmaByIdAluno(id);
-//    }
 
     @RequestMapping(value="/onibus/{id}", method=RequestMethod.GET)
     public @ResponseBody Iterable<Onibus> getOnibusByIdAluno(@PathVariable(name = "id") long id) {
         Iterable<Onibus> onibus = alunoRepositoryJPA.listaOnibusByIdAluno(id);
         onibus.forEach(onibuss -> {onibuss.setAlunos(null);});
         return onibus;
+    }
+
+
+    // ------------------- Deleta Aluno ------------------------------------------------
+
+    @DeleteMapping(value="/delete/{id}")
+    public @ResponseBody void deleteAluno(@PathVariable(name = "id") long id){
+        Aluno aluno = new Aluno();
+        aluno.setId(id);
+        alunoRepository.deleteById(aluno.getId());
     }
 
 }

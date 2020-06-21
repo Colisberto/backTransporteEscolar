@@ -1,6 +1,7 @@
 package br.com.transporteEscolar.controller;
 
 import br.com.transporteEscolar.model.Motorista;
+import br.com.transporteEscolar.model.Turno;
 import br.com.transporteEscolar.repository.MotoristaRepository;
 import br.com.transporteEscolar.repository.MotoristaRepositoryJPA;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,15 @@ public class MotoristaController {
     public @ResponseBody Iterable<Motorista> getAllMotorista() {
         // This returns a JSON or XML with the users
         return motoristaRepository.findAll();
+    }
+
+    // ------------------- Deleta Motorista ------------------------------------------------
+
+    @DeleteMapping(value="/delete/{id}")
+    public @ResponseBody void deleteMotorista(@PathVariable(name = "id") long id) {
+        Motorista motorista =  new Motorista();
+        motorista.setId(id);
+        motoristaRepository.deleteById(motorista.getId());
     }
 
 //    @GetMapping(path="/idAll", produces= MediaType.APPLICATION_JSON_VALUE)

@@ -26,6 +26,7 @@ public class TurnoController {
     @GetMapping(path="/all", produces= MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Iterable<Turno> getAllTurno()
+
     {
         return turnoRepository.findAll();
     }
@@ -54,13 +55,13 @@ public class TurnoController {
         return turnoRepository.save(turno);
     }
 
-    /* // ------------------- Delete Onibus ----------------------------------------
+    /* // ------------------- Delete Turno ----------------------------------------*/
 
     @DeleteMapping(value="/delete/{id}")
-    public @ResponseBody void deleteOnibus(@PathVariable(name = "id") long id){
-        Turno turno = new Turno();
+    public @ResponseBody void deleteTurno(@PathVariable(name = "id") long id) {
+        Turno turno =  new Turno();
         turno.setId(id);
         turnoRepository.deleteById(turno.getId());
-    }*/
+    }
 
 }

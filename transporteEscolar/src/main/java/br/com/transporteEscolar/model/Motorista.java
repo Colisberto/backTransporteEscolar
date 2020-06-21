@@ -16,17 +16,34 @@ public class Motorista implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
+   // @NotNull // campo não pode ser nulo
+   // @NotBlank // campo não pode ser branco
     private String nome;
+
+   // @NotNull // campo não pode ser nulo
+    //@NotBlank // campo não pode ser branco
+    @Column(unique = true) // não pode se repetir
     private String cpf;
+
+   // @NotNull // campo não pode ser nulo
+   // @NotBlank // campo não pode ser branco
+   // @Column(unique = true) // não pode se repetir
     private String telefone;
+
+  //  @NotNull // campo não pode ser nulo
+   // @NotBlank // campo não pode ser branco
     private String endereco;
+
+    //@NotNull // campo não pode ser nulo
+   // @NotBlank // campo não pode ser branco
+   // @Column(unique = true) // não pode se repetir
     private LocalDate dataNascimento;
 
 
 // Definição específico no BANCO para atributo E-mail como :
-    @NotNull // campo não pode ser nulo
-    @NotBlank // campo não pode ser branco
-    @Column(unique = true) // não pode se repetir
+    //@NotNull // campo não pode ser nulo
+   // @NotBlank // campo não pode ser branco
+   // @Column(unique = true) // não pode se repetir
     private String email; // Para o atributo específico E-mail
 
 
