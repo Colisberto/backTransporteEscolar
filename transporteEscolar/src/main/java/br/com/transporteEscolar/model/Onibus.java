@@ -12,7 +12,7 @@ public class Onibus implements Serializable { // Metodo da classe como Serializa
 
     @Id // define ID autoIncremto
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    private long onibus_id;
 
     @NotNull // campo não pode ser nulo
     @NotBlank // campo não pode ser branco
@@ -50,10 +50,10 @@ public class Onibus implements Serializable { // Metodo da classe como Serializa
         this.alunos = alunos;
     }
 
-    public long getId() { return id; }
+    public long getId() { return onibus_id; }
 
     public void setId(long id) {
-        this.id = id;
+        this.onibus_id = onibus_id;
     }
 
     public String getPlaca() {

@@ -15,7 +15,7 @@ public class Turno implements Serializable {
 
     @Id // define ID autoIncremto
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    private long turno_id;
 
    // @NotNull // campo não pode ser nulo
     //@NotBlank // campo não pode ser branco
@@ -60,11 +60,11 @@ public class Turno implements Serializable {
     }
 
     public long getId() {
-        return id;
+        return turno_id;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.turno_id = turno_id;
     }
 
     public String getTurno() {
