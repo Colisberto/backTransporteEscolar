@@ -59,11 +59,11 @@ public class Turno implements Serializable {
         this.alunos = alunos;
     }
 
-    public long getId() {
+    public long getTurno_id() {
         return turno_id;
     }
 
-    public void setId(long id) {
+    public void setTurno_id(long id) {
         this.turno_id = turno_id;
     }
 

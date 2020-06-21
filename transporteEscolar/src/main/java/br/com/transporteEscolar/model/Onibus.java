@@ -50,9 +50,9 @@ public class Onibus implements Serializable { // Metodo da classe como Serializa
         this.alunos = alunos;
     }
 
-    public long getId() { return onibus_id; }
+    public long getOnibus_id() { return onibus_id; }
 
-    public void setId(long id) {
+    public void setOnibus_id(long id) {
         this.onibus_id = onibus_id;
     }
 
