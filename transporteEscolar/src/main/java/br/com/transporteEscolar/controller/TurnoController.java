@@ -31,9 +31,9 @@ public class TurnoController {
         return turnoRepository.findAll();
     }
 
-    @RequestMapping(value="/get/{id}", method=RequestMethod.GET)
+    @RequestMapping(value="/get/{turno_id}", method=RequestMethod.GET)
     public @ResponseBody
-    Optional<Turno> getTurnoByI(@PathVariable(name = "id") long id) {
+    Optional<Turno> getTurnoByI(@PathVariable(name = "turno_id") long id) {
 
         return turnoRepository.findById(id);
     }
@@ -57,11 +57,11 @@ public class TurnoController {
 
     /* // ------------------- Delete Turno ----------------------------------------*/
 
-    @DeleteMapping(value="/delete/{id}")
-    public @ResponseBody void deleteTurno(@PathVariable(name = "id") long id) {
+    @DeleteMapping(value="/delete/{turno_id}")
+    public @ResponseBody void deleteTurno(@PathVariable(name = "turno_id") long turno_id) {
         Turno turno =  new Turno();
-        turno.setId(id);
-        turnoRepository.deleteById(turno.getId());
+        turno.setTurno_id(turno_id);
+        turnoRepository.deleteById(turno.getTurno_id());
     }
 
 }

@@ -29,9 +29,9 @@ public class OnibusController {
         return onibusRepository.findAll();
     }
 
-    @RequestMapping(value="/get/{id}", method=RequestMethod.GET)
+    @RequestMapping(value="/get/{onibus_id}", method=RequestMethod.GET)
     public @ResponseBody
-    Optional<Onibus> getOnibusByI(@PathVariable(name = "id") long id) {
+    Optional<Onibus> getOnibusByI(@PathVariable(name = "onibus_id") long id) {
 
         return onibusRepository.findById(id);
     }
@@ -55,11 +55,11 @@ public class OnibusController {
 
     /* // ------------------- Delete Onibus ----------------------------------------*/
 
-    @DeleteMapping(value="/delete/{id}")
-    public @ResponseBody void deleteOnibus(@PathVariable(name = "id") long id){
+    @DeleteMapping(value="/delete/{onibus_id}")
+    public @ResponseBody void deleteOnibus(@PathVariable(name = "onibus_id") long onibus_id){
         Onibus onibus = new Onibus();
-        onibus.setId(id);
-        onibusRepository.deleteById(onibus.getId());
+        onibus.setOnibus_id(onibus_id);
+        onibusRepository.deleteById(onibus.getOnibus_id());
     }
 
 }

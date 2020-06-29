@@ -50,11 +50,12 @@ public class Turno implements Serializable {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
             })
-
+    // Para listar Alunos relacionados ao Turno
     public List<Aluno> getAlunos() {
         return alunos;
     }
 
+    // Para Cadastrar Alunos vinculando ao aluno ao Turno
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
     }

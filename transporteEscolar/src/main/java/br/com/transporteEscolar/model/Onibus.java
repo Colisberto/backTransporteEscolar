@@ -41,11 +41,12 @@ public class Onibus implements Serializable { // Metodo da classe como Serializa
                     CascadeType.PERSIST,
                     CascadeType.MERGE
             })
-
+    // Para listar Alunos relacionados ao Onibus
     public List<Aluno> getAlunos() {
         return alunos;
     }
 
+    // Para Cadastrar Alunos vinculando ao aluno ao Onibus
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
     }
